@@ -1,0 +1,92 @@
+.topbar-container { 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 20px 0px 20px;
+}
+
+.topbar-logo {
+    font-family: "Audiowide", sans-serif;
+    font-size: 50px;
+    font-weight: bolder;
+    letter-spacing: 5px;
+    background: linear-gradient(45deg, var(--font-color-secondary), var(--font-color-three)); 
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+
+.topbar-contact { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px
+}
+
+.topbar-icon { 
+    color: var(--font-color-primary);
+    font-size: 30px;
+}
+
+.topbar-email { 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left ;
+    line-height: 25px;
+}
+
+.tb-email { 
+    font-family: var(--font-primary);
+    color: var(--font-color-four);
+}
+
+.tb-address { 
+    font-family: var(--font-primary);
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: var(--font-color-three);
+}
+
+/* Button effect rotation */ 
+
+.topbar-menu-button {
+    height: 40px;
+    width: 40px;
+    background-color: transparent;
+    border: 1px solid var(--font-color-four);
+}
+
+.topbar-menu-button i {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.topbar-menu-button .fa-bars {
+    opacity: 1;
+    transform: rotate(0deg);
+}
+
+.topbar-menu-button .fa-xmark {
+    opacity: 1;
+    transform: rotate(90deg); 
+}
+
+
+/* Responsive behavior */
+
+.topbar-menu-button {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .topbar-menu-button {
+        display: block;
+    }
+    .topbar-contact { 
+        display: none;
+    }
+}
+
+
+

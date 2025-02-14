@@ -1,0 +1,14 @@
+@import '@fortawesome/fontawesome-free/css/all.min.css';
+
+:root { 
+    --font-primary: 'Roboto', sans-serif;
+
+    --font-color-primary: #785DC8;
+    --font-color-secondary: #8C75FF;
+    --font-color-three: #7d007d;
+    --font-color-four: #767676;
+    --font-color-five: white;
+
+    --screen-medium: 768px;
+
+}
