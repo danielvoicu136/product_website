@@ -15,6 +15,7 @@
     background-clip: text;
     -webkit-text-fill-color: transparent;
     display: inline-block;
+    margin-left: 30px;
 }
 
 .topbar-contact { 
@@ -54,8 +55,9 @@
 .topbar-menu-button {
     height: 40px;
     width: 40px;
+    font-size: 20px;
     background-color: transparent;
-    border: 1px solid var(--font-color-four);
+    border: none;
 }
 
 .topbar-menu-button i {

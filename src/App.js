@@ -6,6 +6,7 @@ import Footer from './components/Footer/Footer';
 import GoTop from './components/GoTop/GoTop';
 import NavBar from './components/NavBar/NavBar';
 import React, {useState} from 'react';
+import HeroSlider from './components/HeroSlider/HeroSlider';
 
 function App() {
 
@@ -24,7 +25,7 @@ function App() {
 
         <TopBar isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
         <NavBar isMenuOpen={isMenuOpen} closeMenu={closeMenu} />
-
+        <HeroSlider></HeroSlider>
         <Footer></Footer>
         <BotBar></BotBar>
         <GoTop></GoTop>
