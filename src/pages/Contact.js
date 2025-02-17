@@ -1,0 +1,7 @@
+import react from "react";
+
+const Contact = () => { 
+    return ( 
+        <div>page contact</div>
+    )
+}

@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from "react";  
+import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 import "./HeroSlider.css";
 import dataHeroSlider from "../../utils/dataHeroSlider";
 
-const HeroSlider = () => { 
+const HeroSlider = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
 
     useEffect(() => {
@@ -11,27 +12,27 @@ const HeroSlider = () => {
         }, 5000);
 
         return () => clearInterval(interval);
-    }, []); // ✅ Runs only once when the component mounts
+    }, [currentSlide]);
 
     if (!dataHeroSlider || dataHeroSlider.length === 0) {
         return <div className="hero-slider-container">No slides available</div>;
     }
 
-    const nextSlide = () => { 
+    const nextSlide = () => {
         setCurrentSlide((slide) => (slide + 1) % dataHeroSlider.length);
     };
-        
-    const prevSlide = () => { 
+
+    const prevSlide = () => {
         setCurrentSlide((slide) => (slide - 1 + dataHeroSlider.length) % dataHeroSlider.length);
     };
 
-    const goToSlide = (index) => { 
+    const goToSlide = (index) => {
         setCurrentSlide(index);
     };
 
     const slide = dataHeroSlider[currentSlide];
 
-    return ( 
+    return (
         <div className="hero-slider-container">
             <button className="hs-back-btn" onClick={prevSlide} aria-label="Previous Slide">
                 <i className="fa-solid fa-angle-left"></i>
@@ -41,21 +42,42 @@ const HeroSlider = () => {
             </button>
 
             <div className="hero-slide" style={{ backgroundImage: `url(${slide.image})` }}>
-                <div className="hero-slide-content"> 
-                    <h1>{slide.title}</h1>
-                    <p>{slide.description}</p>
-                    <a 
-                        href={slide.buttonLink} 
-                        target="_blank" 
-                        rel="noopener noreferrer" 
+                <motion.div 
+                    key={currentSlide}
+                    className="hero-slide-content"
+                    initial={{ opacity: 0, x: -50 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.8, delay: 0.2 }}
+                >
+                    <motion.h1
+                        initial={{ opacity: 0, y: -30 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, delay: 0.4 }}
+                    >
+                        {slide.title}
+                    </motion.h1>
+                    <motion.p
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, delay: 0.6 }}
+                    >
+                        {slide.description}
+                    </motion.p>
+                    <motion.a
+                        href={slide.buttonLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="hero-slider-button"
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.8, delay: 0.8 }}
                     >
                         {slide.buttonText} <i className="fa-solid fa-arrow-right"></i>
-                    </a>
-                </div>
+                    </motion.a>
+                </motion.div>
             </div>
 
-            <div className="hero-slider-dots"> 
+            <div className="hero-slider-dots">
                 {dataHeroSlider.map((_, index) => (
                     <span
                         key={`dot-${index}`}
