@@ -88,6 +88,15 @@
     .topbar-contact { 
         display: none;
     }
+
+    .topbar-container { 
+        position: sticky;
+        top: 0; 
+        z-index: 1000; 
+        background-color: white; 
+        margin: auto;
+    }
+
 }
 
 
