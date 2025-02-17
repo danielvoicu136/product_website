@@ -1,4 +1,3 @@
-import react from "react";
 
 const Careers = () => { 
     return(
