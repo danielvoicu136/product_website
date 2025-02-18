@@ -104,9 +104,10 @@
 .hs-back-btn,
 .hs-next-btn {
     position: absolute;
-    top: 50%;
+    bottom: 1%;
     transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.5);
+   /* background: rgba(0, 0, 0, 0.5); */
+   background: transparent;
     color: white;
     border: none;
     font-size: 24px;
