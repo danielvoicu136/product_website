@@ -2,7 +2,7 @@
 
 const Contact = () => { 
     return ( 
-        <div>page contact</div>
+        <div> </div>
     )
 }
 export default Contact

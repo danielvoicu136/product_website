@@ -4,15 +4,14 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import TopBar from './components/TopBar/TopBar';
 import BotBar from './components/BotBar/BotBar';
 import Footer from './components/Footer/Footer';
-import GoTop from './components/GoTop/GoTop';
 import NavBar from './components/NavBar/NavBar';
 import React, {useState} from 'react';
-
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Services from "./pages/Services";
 import Careers from "./pages/Careers";
 import Contact from "./pages/Contact";
+import BackToTop from './components/BackToTop/BackToTop';
 
 
 function App() {
@@ -48,7 +47,7 @@ function App() {
         </Router>
         <Footer></Footer>
         <BotBar></BotBar>
-        <GoTop></GoTop>
+        <BackToTop></BackToTop>
     </div>
   );
 }
