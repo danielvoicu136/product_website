@@ -1,7 +1,7 @@
 import React from "react";
 import "./MainSkill.css";
 
-import imgSkill from "../../assets/images/game.jpg"; 
+import imgSkill from "../../assets/images/flex.jpg"; 
 
 const MainSkill = () => {
   return (
